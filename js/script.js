@@ -19,14 +19,17 @@ while (i < itemsList.length) {
 }
 
 const sliderItems = document.getElementsByClassName("single-item");
+const sliderThumbs = document.getElementsByClassName("thumb");
 let sliderPosition = 0;
 sliderItems[sliderPosition].classList.add("active");
+sliderThumbs[sliderPosition].classList.add("active");
 
 const prevArr = document.querySelector(".prev-img");
 const nextArr = document.querySelector(".next-img");
 
 nextArr.addEventListener("click", function() {
     sliderItems[sliderPosition].classList.remove("active");
+    sliderThumbs[sliderPosition].classList.remove("active");
     
     if (sliderPosition < itemsList.length -1) {
         sliderPosition++;
@@ -35,10 +38,12 @@ nextArr.addEventListener("click", function() {
     }
 
     sliderItems[sliderPosition].classList.add("active")
+    sliderThumbs[sliderPosition].classList.add("active");
 })
 
 prevArr.addEventListener("click", function() {
     sliderItems[sliderPosition].classList.remove("active");
+    sliderThumbs[sliderPosition].classList.remove("active");
     
     if (sliderPosition > 0) {
         sliderPosition--;
@@ -47,5 +52,6 @@ prevArr.addEventListener("click", function() {
     }
     
     sliderItems[sliderPosition].classList.add("active")
+    sliderThumbs[sliderPosition].classList.add("active");
 })
 
